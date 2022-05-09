@@ -10,8 +10,6 @@ from random import randint
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-
-# from patch import webdriver_executable
 import mimetypes
 from joblib import Parallel, delayed
 import urllib3
@@ -88,7 +86,7 @@ class fish_scraper:
     def dl_image(self, url):
         """
         Download images from passed in urls.
-        Only files of filetype .png and .jpg are downloaded to
+        Only files of filetype .png, .jpeg and .jpg are downloaded to
         the passed in folder path
         """
 
@@ -123,6 +121,10 @@ class fish_scraper:
                 f.close()
 
     def scrape_fishbase(self):
+    	"""
+        This function search the fishbase database for images.
+
+        """
         def get_url(image):
             url = image["src"]
             url = url.replace("%2F", "/")
@@ -150,9 +152,6 @@ class fish_scraper:
     def scrape_google(self):
         """
         This function search and return a list of image urls based on the search key.
-        Example:
-                                                                                                                                        google_image_scraper = GoogleImageScraper("webdriver_path","image_path","fish",number_of_photos)
-                                                                                                                                        image_urls = google_image_scraper.find_image_urls()
 
         """
         print("[INFO] Scraping for image link... Please wait.")
@@ -221,8 +220,6 @@ class fish_scraper:
 
         self.driver.quit()
         print("[INFO] Google search ended")
-        # [self.dl_image(url) for url in image_urls]
-        # print(f"[INFO] Google done downloading images for {self.fish}")
 
     def run(self):
         print(f"{self.fish} fetching initiated...")
