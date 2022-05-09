@@ -15,12 +15,28 @@ from selenium.webdriver.common.by import By
 import mimetypes
 from joblib import Parallel, delayed
 import urllib3
-from tqdm import tqdm
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 class fish_scraper:
+
+	'''
+	Scrapes images from fishbase.org and google images using Beutifulsoup and Selenium.
+	To use this library you need to have Selenium installed.
+	
+	FEATURES:
+	fish (string): The fish you wanna search for and download images of.
+	folder_path (string): Where to store the images you download.
+	webdriver_path (string): Path to you Selenium installation.
+	num_images (int): number og images you want to donload from google images
+	headless (boolean): Whether to use headless scraping. If True, Selenium will launch a visible Chrome window.
+	min_res (tuple): The minimum resolution you want the images to be. Eg. (100, 100) which is 100 pixels x 100 pixels.
+	max_res (tuple): The maximum resolution you want the images to be.
+	export_urls (boolean): Whether to save a json file with all the urls of images found. 
+	'''
+
+
     def __init__(
         self,
         fish,

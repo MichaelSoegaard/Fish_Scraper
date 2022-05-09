@@ -9,7 +9,7 @@ This is a sub repository for a coming convolutional neural network engine to rec
 So why do I want to create that? -well in my spare time I create aqua scapes, which is a kind of advanced way of keeping aquarium, with focus of creating a scenic and nice looking setup with plants, roots and stones. From time to time I need to identify fish at different place, the petstore, aquariums at different places. It's not that I need this functionality, I just thought it would be a fun project to do.
 
 
-![[IMG_20200807_133938.jpg]]
+![Aquascpae](img/IMG_20200807_133938.jpg)
 _Early stage of one of my aquascapes_
 
 
