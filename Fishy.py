@@ -135,8 +135,8 @@ class fish_scraper:
         """
         This function search and return a list of image urls based on the search key.
         Example:
-                                                                        google_image_scraper = GoogleImageScraper("webdriver_path","image_path","fish",number_of_photos)
-                                                                        image_urls = google_image_scraper.find_image_urls()
+                                                                                                                                        google_image_scraper = GoogleImageScraper("webdriver_path","image_path","fish",number_of_photos)
+                                                                                                                                        image_urls = google_image_scraper.find_image_urls()
 
         """
         print("[INFO] Scraping for image link... Please wait.")
@@ -147,13 +147,13 @@ class fish_scraper:
         time.sleep(3)
         indx = 1
         while self.num_images > count:
-            imgurl = self.driver.find_element(
-                By.XPATH,
-                '//*[@id="islrg"]/div[1]/div[%s]/a[1]/div[1]/img' % (str(indx)),
-            )
+
             try:
                 # find and click image
-                # imgurl get
+                imgurl = self.driver.find_element(
+                    By.XPATH,
+                    '//*[@id="islrg"]/div[1]/div[%s]/a[1]/div[1]/img' % (str(indx)),
+                )
                 imgurl.click()
                 missed_count = 0
             except Exception:
